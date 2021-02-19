@@ -1,3 +1,5 @@
-# Set the default java toolchain
-build --java_toolchain=@bazel_tools//tools/jdk:toolchain_java11
-
+build --define=ABSOLUTE_JAVABASE=/usr/lib/jvm/java-1.8.0-amazon-corretto/
+build --javabase=@bazel_tools//tools/jdk:absolute_javabase
+build --host_javabase=@bazel_tools//tools/jdk:absolute_javabase
+build --java_toolchain=@bazel_tools//tools/jdk:toolchain_vanilla
+build --host_java_toolchain=@bazel_tools//tools/jdk:toolchain_vanilla
